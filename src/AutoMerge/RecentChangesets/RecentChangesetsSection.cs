@@ -1,4 +1,5 @@
-﻿using AutoMerge.Base;
+using AutoMerge.Base;
+using AutoMerge.RecentChangesets.Team;
 using Microsoft.TeamFoundation.Controls;
 
 namespace AutoMerge
@@ -18,4 +19,18 @@ namespace AutoMerge
             return new RecentChangesetsView();
 		}
 	}
+
+    [TeamExplorerSection(GuidList.RecentChangesetsTeamSectionId, GuidList.AutoMergeTeamPageId, 11)]
+    public class RecentChangesetsTeamSection : TeamExplorerSectionBase
+    {
+        protected override ITeamExplorerSection CreateViewModel(SectionInitializeEventArgs e)
+        {
+            return base.CreateViewModel(e) ?? new RecentChangesetsTeamViewModel(new VsLogger(ServiceProvider));
+        }
+
+        protected override object CreateView(SectionInitializeEventArgs e)
+        {
+            return new RecentChangesetsTeamView();
+        }
+    }
 }

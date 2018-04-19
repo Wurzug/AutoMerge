@@ -321,6 +321,10 @@
     </Compile>
     <Compile Include="RecentChangesets\RecentChangesetsViewModel.cs" />
     <Compile Include="RecentChangesets\RecentChangesetsViewModelContext.cs" />
+    <Compile Include="RecentChangesets\Team\RecentChangesetsTeamView.xaml.cs">
+      <DependentUpon>RecentChangesetsTeamView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RecentChangesets\Team\RecentChangesetsTeamViewModel.cs" />
     <Compile Include="Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -396,6 +400,10 @@
     <Page Include="RecentChangesets\RecentChangesetsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecentChangesets\Team\RecentChangesetsTeamView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Styles\CommonStyles.xaml">
       <SubType>Designer</SubType>
